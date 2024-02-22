@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.buttonas{
+    opacity: 90%
+}
+.buttonas:hover{
+    opacity: 100%
+}
