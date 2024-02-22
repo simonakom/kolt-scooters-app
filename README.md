@@ -9,4 +9,4 @@ Currently, two official plugins are available:
 
 
 
-<h4>🔹 page sample - <a href="https://simonakom.github.io/kolt-scooters-app" style="font-size:small;">View</a><h4>
+<h4>🔹 page sample - <a href="https://simonakom.github.io/kolt-scooters-app/index.html" style="font-size:small;">View</a><h4>
