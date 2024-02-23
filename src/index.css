@@ -2,10 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-
-.buttonas{
-    opacity: 90%
+body {
+    background-color: rgb(203 213 225);
 }
-.buttonas:hover{
-    opacity: 100%
+.btn-hover{
+    opacity: 95%
+} 
+.btn-hover:hover{
+    opacity: 2;
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
 }

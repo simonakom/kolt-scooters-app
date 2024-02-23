@@ -5,7 +5,7 @@
 		"hourlyPrice": 4.45,
 		"ride": 61.12,
 		"registrationCode": "VNQ88",
-		"lastUseTime": 1708455051000,
+		"lastUseTime": 1708355051000,
 		"isBusy": true
 	},
 	{
@@ -14,7 +14,7 @@
 		"hourlyPrice": 6.46,
 		"ride": 79.38,
 		"registrationCode": "SSJ91",
-		"lastUseTime": 1708446523000,
+		"lastUseTime": 1607446522200,
 		"isBusy": false
 	},
 	{
@@ -23,7 +23,7 @@
 		"hourlyPrice": 5.22,
 		"ride": 93.68,
 		"registrationCode": "LZU79",
-		"lastUseTime": 1708448007000,
+		"lastUseTime": 1726248007000,
 		"isBusy": true
 	},
 	{
@@ -32,7 +32,7 @@
 		"hourlyPrice": 3.51,
 		"ride": 84.15,
 		"registrationCode": "MQZ34",
-		"lastUseTime": 1708451442000,
+		"lastUseTime": 1708971442000,
 		"isBusy": false
 	},
 	{
@@ -41,7 +41,7 @@
 		"hourlyPrice": 7.0,
 		"ride": 94.92,
 		"registrationCode": "EKA65",
-		"lastUseTime": 1708450306000,
+		"lastUseTime": 1709850306000,
 		"isBusy": true
 	},
 	{
@@ -50,7 +50,7 @@
 		"hourlyPrice": 8.88,
 		"ride": 73.76,
 		"registrationCode": "SAV30",
-		"lastUseTime": 1708447798000,
+		"lastUseTime": 1709947798000,
 		"isBusy": false
 	},
 	{
@@ -59,7 +59,7 @@
 		"hourlyPrice": 8.18,
 		"ride": 51.36,
 		"registrationCode": "EKY14",
-		"lastUseTime": 1708445633000,
+		"lastUseTime": 1709115633000,
 		"isBusy": true
 	},
 	{
@@ -68,7 +68,7 @@
 		"hourlyPrice": 4.17,
 		"ride": 96.21,
 		"registrationCode": "AED41",
-		"lastUseTime": 1708454957000,
+		"lastUseTime": 1708494957000,
 		"isBusy": false
 	},
 	{
@@ -77,7 +77,7 @@
 		"hourlyPrice": 3.57,
 		"ride": 92.64,
 		"registrationCode": "WZZ44",
-		"lastUseTime": 1708452503000,
+		"lastUseTime": 1707232503000,
 		"isBusy": true
 	},
 	{
@@ -86,7 +86,7 @@
 		"hourlyPrice": 9.38,
 		"ride": 56.5,
 		"registrationCode": "SEI22",
-		"lastUseTime": 1708446557000,
+		"lastUseTime": 1701119957000,
 		"isBusy": false
 	}
 ]

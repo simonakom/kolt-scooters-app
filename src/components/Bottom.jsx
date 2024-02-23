@@ -1,10 +1,5 @@
 export default function Bottom () {
-
-
   return (
-    <div className="container bg-blue-200 min-h-[400px] mx-auto">   
-
-    </div>
-
-    )
+    <div className="container mx-auto bg-blue-200 min-h-[400px]"></div>
+  )
 }
