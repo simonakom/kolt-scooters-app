@@ -42,8 +42,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 Hope you find this project interesting and useful!
 
-
-
+<img src="./public/page.png" alt="48 items" style="border-radius: 10px; display: inline-block;" />
 
 
 
