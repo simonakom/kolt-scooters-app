@@ -1,13 +1,10 @@
-import {useEffect, useState} from "react"
+import { useEffect, useState } from "react"
 import { FaCheckCircle, FaTimesCircle } from 'react-icons/fa';
-import { FaPencil } from "react-icons/fa6";
-import { FaTrashCan } from "react-icons/fa6";
+import { FaPencil, FaTrashCan } from "react-icons/fa6";
 
 function Status({ status }) {
-  const iconSizeClass = 'text-2xl inline';
-
   return (
-    <div className={`${iconSizeClass}`}>
+    <div className="text-2xl inline">
       {status ? <FaCheckCircle color="#42b1e2" /> : <FaTimesCircle color="#d67eb2" />}
     </div>
   );
@@ -48,16 +45,24 @@ function Scooter({scooter}){
 }
 
 export default function Middle () {
-  const [scooter, setScooter] = useState([]);
+  const [scooter, setScooter] = useState(getAllScooters);
 
-  useEffect(()=>{
-    fetch("/scooters.json")
-      .then((resp)=> resp.json())
-      .then((data)=> {
-        console.log(data);
-        setScooter(data);
-      });
-  },[])
+  //Using json file
+  // useEffect(()=>{
+  //   fetch("/scooters.json")
+  //     .then((resp)=> resp.json())
+  //     .then((data)=> {
+  //       console.log(data);
+  //       setScooter(data);
+  //     });
+  // },[])
+
+  //Using localStorage
+  function getAllScooters() {
+    const data = JSON.parse(localStorage.getItem("scooters")) || []; // console.log(data);
+    if(data.length === 0) localStorage.setItem("scooters","[]");
+    return data;
+  }
 
   return (
     <div className="container mx-auto min-h-[400px] flex flex-col p-4 pt-6 gap-2 ">   
