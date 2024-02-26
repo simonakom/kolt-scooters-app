@@ -8,27 +8,35 @@ export default function AddScooterForm () {
     // const [pricing, setPricing] = useState (0);
     const [scooter, setScooter] = useState ({ title:"", ride:0, registrationCode:"", hourlyPrice:0 });
 
-
-
     const handleNameChange = (event) => {
-      setScooter ({...scooter,title: event.target.value});
+      const newValue = event.target.value;
+      if(newValue.length > 15)
+        alert("Price must be up to 15 characters");
+      else setScooter ({...scooter,title: event.target.value});
     };
     const handleRideChange = (event) => {
       const newValue = +event.target.value; //console.log (newValue)
       if (newValue < 0){
-          alert("Mileage must be greater than zero");
+        alert("Mileage must be greater than zero");
       } else setScooter ({...scooter, ride:newValue});
     };
     const handleNationalNumberChange = (event) => {
       const newValue = event.target.value;
       if(newValue.length > 5){
-      alert ("National number must be up to 5 characters")
+        alert ("National number must be up to 5 characters")
       } else setScooter ({...scooter, registrationCode:newValue});
     };
-    const handlePricingChange = (e) => {
-      const newValue = +e.target.value;
-      if (newValue < 0) alert("Kainos reikšmė negali būti mažesnė nei nulis");
+    const handlePricingChange = (event) => {
+      const newValue = +event.target.value;
+      if (newValue < 0) 
+        alert("Price must be greater than zero");
       else setScooter({ ...scooter, hourlyPrice: newValue });
+    };
+
+    const saveNewScooter = () => {
+      if (!/[A-Z]{3}[\d]{2}/.test(scooter.registrationCode)) {
+        alert("Wrong registration code");
+      }
     };
 
     return (
@@ -62,6 +70,7 @@ export default function AddScooterForm () {
           placeholder="Type scooter price/hour..."
           />
           <Button 
+          onClick={saveNewScooter}
           text="Check" 
           color="#f4cf1b"
           textColor="#292f3f"
