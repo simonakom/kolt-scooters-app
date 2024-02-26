@@ -36,7 +36,12 @@ export default function AddScooterForm () {
     const saveNewScooter = () => {
       if (!/[A-Z]{3}[\d]{2}/.test(scooter.registrationCode)) {
         alert("Wrong registration code");
+        return;
       }
+      // Save the scooter data to local storage
+      const saveInLocaltorage = JSON.parse(localStorage.getItem('scooters')) || []; // retrieves the data stored in the local storage
+      saveInLocaltorage.push(scooter); //scooter: scooter entered by the user in the form
+      localStorage.setItem('scooters', JSON.stringify(saveInLocaltorage));
     };
 
     return (
