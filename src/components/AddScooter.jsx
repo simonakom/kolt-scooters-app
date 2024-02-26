@@ -55,7 +55,7 @@ export default function AddScooterForm () {
         />
         <input 
           type="number"
-          value={scooter.ride.toString()}
+          value={scooter.ride === 0 ? "" : scooter.ride.toString()}
           onChange={handleRideChange}
           className="rounded-lg p-2  outline-amber-400 outline-2 text-slate-700 bg-slate-200 min-w-[100px] w-full sm:w-1/4 mb-2 sm:mb-0"
           placeholder='Type scooter mileage...'
@@ -69,7 +69,7 @@ export default function AddScooterForm () {
           />
           <input
           type="number"
-          value={scooter.hourlyPrice}
+          value={scooter.hourlyPrice === 0 ? "" : scooter.hourlyPrice.toString()}
           onChange={handlePricingChange}
           className="rounded-lg p-2 py-2 outline-amber-400 outline-2 text-slate-700 bg-slate-200 min-w-[100px] w-full sm:w-1/4 mb-2 sm:mb-0"
           placeholder="Type scooter price/hour..."

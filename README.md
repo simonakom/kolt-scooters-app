@@ -9,7 +9,7 @@
 
 ## Welcome!
 
-This is a CRUD sample of scooters app - created using React Vite, Tailwind, Css, localStorage.
+This is a CRUD sample of scooters responsive app - created using React Vite, Tailwind, Css, localStorage.
 
 🔹 Preview -  <a href="https://simonakom.github.io/kolt-scooters-app/dist/index.html" style="font-size:small;">View</a><h4>
  
