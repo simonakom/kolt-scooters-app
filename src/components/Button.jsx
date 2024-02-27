@@ -1,3 +1,5 @@
+import * as PropTypes from "prop-types";
+
 export default function Button({
     text = "Button-text", 
     color = "blue", 
@@ -13,3 +15,10 @@ export default function Button({
         </button>
     )
 }
+
+Button.propTypes = {
+	text: PropTypes.string,
+	color: PropTypes.string,
+	textColor: PropTypes.string,
+	onClick: PropTypes.func,
+};

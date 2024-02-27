@@ -1,14 +1,19 @@
 import { useEffect, useState } from "react"
 import { FaCheckCircle, FaTimesCircle } from 'react-icons/fa';
 import { FaPencil, FaTrashCan } from "react-icons/fa6";
+import * as PropTypes from "prop-types";
+
 
 function Status({ status }) {
   return (
     <div className="text-2xl inline">
-      {status ? <FaCheckCircle color="#42b1e2" /> : <FaTimesCircle color="#d67eb2" />}
+      {status ? <FaTimesCircle color="#d67eb2" /> : <FaCheckCircle color="#42b1e2" />}
     </div>
   );
 }
+Status.propTypes = {
+	status: PropTypes.bool.isRequired,
+};
 
 function Scooter({scooter}){
   return (
@@ -29,11 +34,11 @@ function Scooter({scooter}){
           </div>
           <div className="border-l-2  border-slate-200 px-3 min-w-[130px]">    
             <h3 className="font-bold"> Last used</h3>
-            <div>{new Date(scooter.lastUseTime).toLocaleDateString("lt")}</div>
+            <div>{scooter.lastUseTime === 1 ? "Never used" : new Date(scooter.lastUseTime).toLocaleDateString("lt")}</div>
           </div>
           <div className="border-l-2  border-slate-200 px-3 inline min-w-[120px]">    
             <h3 className="font-bold">Status</h3>
-            <div className="flex gap-2"><Status status={scooter.isBusy}/>{scooter.isBusy ? "available" : "In use"}</div>
+            <div className="flex gap-2"><Status status={scooter.isBusy}/>{scooter.isBusy ? "In use" : "available" }</div>
           </div>
 
           <div className='flex gap-x-10 gap-y-20 items-center p-3'>
@@ -43,19 +48,43 @@ function Scooter({scooter}){
       </div>
   );
 }
+Scooter.propTypes = {
+	scooter: PropTypes.object,
+};
 
-export default function Middle () {
+export default function Middle ({newScooter}) {
   const [scooter, setScooter] = useState(getAllScooters);
 
-  //Using json file
-  // useEffect(()=>{
-  //   fetch("/scooters.json")
-  //     .then((resp)=> resp.json())
-  //     .then((data)=> {
-  //       console.log(data);
-  //       setScooter(data);
-  //     });
-  // },[])
+  useEffect(()=> { //Function starts when changes "newScooter". Add new scooter to array
+    console.log (" value of 'newScooter' changed ")
+    if (newScooter === null) return;
+    if (newScooter){
+      // console.log("New scooter from imputs was added:" + newScooter); console.log(newScooter);
+
+      const newId = +localStorage.getItem("currentId");
+      if(!newId){
+        localStorage.setItem("currentId", "1")
+      }
+
+          const newScooterAddition = { //add missing values when adding new scooter
+            ...newScooter,
+            id: newId || 1,
+            lastUseTime: 1,
+            isBusy: false
+        };
+        // console.log("Missing values added:" + newScooter); console.log(newScooterAddition);
+      
+      setScooter([...scooter, newScooterAddition]); //Value of  all scooters: existent + new
+      const nextId = newId + 1 === 1 ? 2 :newId + 1;
+      localStorage.setItem("currentId", nextId)
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[newScooter])
+
+  //Add scooters to localStorage once "scooter" is updated
+  useEffect(()=>{
+    localStorage.setItem("scooters", JSON.stringify(scooter)); //key-scooters
+  }, [scooter]) 
 
   //Using localStorage
   function getAllScooters() {
@@ -74,3 +103,6 @@ export default function Middle () {
     </div>
     );
 }
+Middle.propTypes = {
+	newScooter: PropTypes.object,
+};
