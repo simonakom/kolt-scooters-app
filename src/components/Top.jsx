@@ -1,7 +1,6 @@
 import AddScooterForm from './AddScooter.jsx';
 import * as PropTypes from "prop-types";
 import scooterImage from '../../public/electric-scooter.png'; 
-// "/public/electric-scooter.png" 
 
 export default function Top ({notifyScooterAddition}) {
   return (
