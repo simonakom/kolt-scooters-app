@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useMemo } from "react"
 import { FaCheckCircle, FaTimesCircle } from 'react-icons/fa';
 import { FaPencil, FaTrashCan } from "react-icons/fa6";
 import * as PropTypes from "prop-types";
+import Button from './Button';
 
 
 function Status({ status }) {
@@ -19,7 +20,7 @@ function Scooter({scooter}){
   return (
       <div 
         key={scooter.id} 
-        className="bg-slate-100 text-slate-700 rounded px-10 py-3 flex flex-wrap gap-x-10 gap-y-8 justify-between overflow-scroll" >
+        className="bg-slate-100 text-slate-700 rounded px-10 py-3 flex flex-wrap gap-x-10 gap-y-8 justify-between overflow-hidden" >
           <div className="border-l-2 border-teal-500 px-3 py-2 ">    
             <h3 className="font-bold underline text-teal-600 min-w-[130px]">{scooter.title}</h3>
             <div>Mileage {scooter.ride}km </div>
@@ -54,6 +55,7 @@ Scooter.propTypes = {
 
 export default function Middle ({newScooter}) {
   const [scooter, setScooter] = useState(getAllScooters);
+  const [showFreeScooter, setShowFreeScooter] = useState(null);
 
   useEffect(()=> { //Function starts when changes "newScooter". Add new scooter to array
     console.log (" value of 'newScooter' changed ")
@@ -93,9 +95,50 @@ export default function Middle ({newScooter}) {
     return data;
   }
 
+  //Filtering
+  const filteredScooters = useMemo(()=> scooter.filter((val) => { //val-each value of array
+      if (showFreeScooter === null) {
+        return true;  
+      } else if (showFreeScooter) {
+        return val.isBusy===false;
+      } else {
+        return val.isBusy===true;
+      }
+    }), [showFreeScooter, scooter ]);
+
   return (
     <div className="container mx-auto min-h-[400px] flex flex-col p-4 pt-6 gap-2 ">   
-      {scooter.map((s)=>(
+
+      <div className='flex flex-col sm:flex-row p-3 gap-5'>
+          <Button
+            text="all" 
+            color="#f4cf1b" 
+            textColor="#292f3f"
+            onClick={() => {
+              setShowFreeScooter(null);
+            }}
+          />
+          <Button  
+            text= {showFreeScooter === true 
+              ? "In use" 
+              :  "Available" 
+            }
+            color = { showFreeScooter === true 
+                ? "#d67eb2" 
+                : "#42b1e2" 
+            }
+            textColor="#292f3f" 
+            onClick={() => {
+              setShowFreeScooter((prevValue) => {
+                return prevValue === true 
+                  ? false 
+                  : true;
+              });
+            }}
+          />  
+        </div>
+
+      {filteredScooters.map((s)=>(
         <Scooter 
           key={s.id} 
           scooter={s} />

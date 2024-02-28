@@ -45,7 +45,7 @@ export default function AddScooterForm ({notifyScooterAddition}) {
     }; 
 
     return (
-    <div className="flex flex-col sm:flex-row  gap-4 min-w-[80%] justify-center items-center">
+    <div className="flex flex-col sm:flex-row  gap-4 max-w-[90%] min-w-[70%] justify-center items-center mb-10">
         <input 
             type="text"
             value={scooter.title}

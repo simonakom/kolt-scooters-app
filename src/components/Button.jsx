@@ -8,7 +8,7 @@ export default function Button({
 }) {
     return (
         <button 
-            className={`px-5 py-2 rounded-md font-medium btn-hover break-keep max-w-[300px] flex justify-center`} 
+            className={`px-5 py-2 rounded-md font-medium btn-hover break-keep max-w-[130px] flex justify-center overflow-hidden`} 
             style={{color:textColor, background: color}}
             onClick={onClick}
             >{text}
