@@ -31,7 +31,8 @@ Before you begin, ensure you have the following installed on your machine:
 2. Navigate to the project directory
 3. Install tailwind
 4. Install dependencies: `npm install`
-5. Once the dependencies are installed, you can start the development server and run the app:  `npm run dev`
+5. Install React Icons: `npm install react-icons`
+6. Once the dependencies are installed, you can start the development server and run the app:  `npm run dev`
 
 ### Viewing the App
 
