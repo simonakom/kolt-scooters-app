@@ -3,7 +3,7 @@
 
 <div align="center">
   <img src="https://img.shields.io/badge/📖%20license-%20MIT-a964d0.svg" alt="48 items"/> 
-  <img id="last-update-badge" src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20February%2026%2C%202024-267a60.svg" alt="Last update: February 15, 2024" /> 
+  <img id="last-update-badge" src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20March%2001%2C%202024-267a60.svg" alt="Last update: February 15, 2024" /> 
   <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%2020.10.0-187e25.svg" alt="Updated for Node 20.10.0"/>
 </div>
 
@@ -43,7 +43,8 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 Hope you find this project interesting and useful!
 
-<img src="./public/page.png" alt="48 items" style="border-radius: 10px; display: inline-block;" />
+<img src="./public/look.png" alt="48 items" style="border-radius: 10px; display: inline-block;" />
+<img src="./public/look2.png" alt="48 items" style="border-radius: 10px; display: inline-block;" />
 
 
 

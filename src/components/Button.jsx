@@ -15,7 +15,6 @@ export default function Button({
         </button>
     )
 }
-
 Button.propTypes = {
 	text: PropTypes.string,
 	color: PropTypes.string,
