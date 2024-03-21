@@ -1,12 +1,14 @@
 import Button from './Button';
-import { useState } from "react"
-import * as PropTypes from "prop-types";
+import { useState, useContext } from "react"
 import ErrorMessage from "./ErrorMessage";
+import KoltContext from "../context/KoltContext";
 
-export default function AddScooterForm ({notifyScooterAddition}) {
+export default function AddScooterForm () {
   const initialScooterState = { title:"", ride:0, registrationCode:"", hourlyPrice:0 };
     const [scooter, setScooter] = useState ({ title:"", ride:0, registrationCode:"", hourlyPrice:0 });
     const [errorMessage, setErrorMessage] = useState(""); 
+
+    const {setNewScooter } = useContext(KoltContext);
 
     const handleNameChange = (event) => {
       const newValue = event.target.value;
@@ -52,9 +54,8 @@ export default function AddScooterForm ({notifyScooterAddition}) {
         setErrorMessage ("Wrong registration number: It should contain 3 capital letters and 2 numbers!");
         return;
       }
-      //notify Parent (Layout.jsx) once new scooter is added and pass new added "scooter" as a parameter
-      notifyScooterAddition(scooter);
-      // Reset the input fields
+      
+      setNewScooter(scooter)
       setScooter(initialScooterState);
     }; 
 
@@ -109,6 +110,3 @@ export default function AddScooterForm ({notifyScooterAddition}) {
     </div>
   );
 }
-AddScooterForm.propTypes = {
-	notifyScooterAddition: PropTypes.func,
-};

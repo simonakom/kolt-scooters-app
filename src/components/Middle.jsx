@@ -1,12 +1,14 @@
-import { useEffect, useState, useMemo } from "react"
+import { useEffect, useState, useMemo, useContext } from "react"
 import { FaCheckCircle, FaTimesCircle } from 'react-icons/fa';
 import { FaTrashCan } from "react-icons/fa6";
 import * as PropTypes from "prop-types";
 import Button from './Button';
 import ErrorMessage from "./ErrorMessage";
+import KoltContext from "../context/KoltContext";
 
 
 function Status({ status, onClick }) {
+  
   return (
     <div className="text-2xl inline cursor-pointer" onClick={onClick}>
       {status ? <FaTimesCircle color="#d67eb2" /> : <FaCheckCircle color="#42b1e2" />}
@@ -61,11 +63,12 @@ Scooter.propTypes = {
   updateFunc: PropTypes.func,
 };
 
-export default function Middle ({newScooter, resetInput}) {
+export default function Middle () {
   const [scooter, setScooter] = useState(getAllScooters);
   const [showFreeScooter, setShowFreeScooter] = useState(null);
   const [selectedRideSort, setSelectedRideSort] = useState("0")
   const [errorMessage, setErrorMessage] = useState(""); 
+  const {newScooter, setNewScooter } = useContext(KoltContext);
 
   useEffect(()=> { //Function starts when changes "newScooter". Add new scooter to array
     console.log ("value of 'newScooter' changed")
@@ -100,7 +103,7 @@ export default function Middle ({newScooter, resetInput}) {
       setScooter([...scooter, newScooterAddition]); //Value of  all scooters: existent + new
       const nextId = newId + 1 === 1 ? 2 :newId + 1;
       localStorage.setItem("currentId", nextId);
-      resetInput();
+      setNewScooter(null);
     }
   }
 
@@ -225,7 +228,3 @@ export default function Middle ({newScooter, resetInput}) {
     </div>
     );
 }
-Middle.propTypes = {
-	newScooter: PropTypes.object,
-  resetInput: PropTypes.func,
-};
