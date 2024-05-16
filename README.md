@@ -1,5 +1,5 @@
 
-# <span><img src="/electric-scooter.png" alt="scooter" style="height: 1em;"></span> "Kolt" scooters app
+# <span><img src="./public/electric-scooter.png" alt="scooter" style="height: 1em;"></span> "Kolt" scooters app
 
 <div">
   <img src="https://img.shields.io/badge/📖%20license-%20MIT-a964d0.svg" alt="license"/> 
