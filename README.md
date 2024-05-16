@@ -1,18 +1,17 @@
 
-# <span style="margin-right: 10px;"><img src="./public/electric-scooter.png" alt="confetti" style="height: 2em; vertical-align: middle;"></span> "Kolt" scooters app
+# <span><img src="/electric-scooter.png" alt="scooter" style="height: 1em;"></span> "Kolt" scooters app
 
-<div align="center">
-  <img src="https://img.shields.io/badge/📖%20license-%20MIT-a964d0.svg" alt="48 items"/> 
-  <img id="last-update-badge" src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20March%2001%2C%202024-267a60.svg" alt="Last update: February 15, 2024" /> 
-  <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%2020.10.0-187e25.svg" alt="Updated for Node 20.10.0"/>
+<div">
+  <img src="https://img.shields.io/badge/📖%20license-%20MIT-a964d0.svg" alt="license"/> 
+  <img id="last-update-badge" src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20March%2001%2C%202024-267a60.svg" alt="update" /> 
+  <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%2020.10.0-187e25.svg" alt="node"/>
 </div>
 
 ## Welcome!
 
 This is a CRUD sample of scooters responsive app - created using React Vite, Tailwind, Css, localStorage.
 
-🔹 Preview -  <a href="https://simonakom.github.io/kolt-scooters-app/dist/index.html" style="font-size:small;">View</a><h4>
- 
+🔹 Preview -  <a href="https://simonakom.github.io/kolt-scooters-app/dist/index.html">View</a><h4>
 
 ## Getting Started
 
@@ -43,8 +42,16 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 Hope you find this project interesting and useful!
 
-<img src="./public/look.png" alt="48 items" style="border-radius: 10px; display: inline-block;" />
-<img src="./public/look2.png" alt="48 items" style="border-radius: 10px; display: inline-block;" />
+### Desktop version:
+<div>
+  <img src="./public/look.png" alt="page" style="border-radius: 10px; display: inline-block;" />
+  <img src="./public/look2.png" alt="page" style="border-radius: 10px; display: inline-block;" />
+
+### Mobile version:
+  <img src="./public/responsive.png" alt="page" style="border-radius: 10px; display: inline-block;" />
+</div>
+
+
 
 
 

@@ -5,9 +5,6 @@
 body {
     background-color: rgb(203 213 225);
 }
-.btn-hover{
-    opacity: 95%
-} 
 .btn-hover:hover{
     opacity: 2;
     transform: scale(1.05);

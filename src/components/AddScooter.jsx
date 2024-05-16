@@ -41,9 +41,9 @@ export default function AddScooterForm () {
     const saveNewScooter = () => {
        // Check if all input fields are empty
       if (
-        scooter.title.trim() === "" &&
-        scooter.ride === 0 &&
-        scooter.registrationCode.trim() === "" &&
+        scooter.title.trim() === "" ||
+        scooter.ride === 0 ||
+        scooter.registrationCode.trim() === "" ||
         scooter.hourlyPrice === 0
       ) {
         setErrorMessage("All fields are required!");
@@ -54,6 +54,9 @@ export default function AddScooterForm () {
         setErrorMessage ("Wrong registration number: It should contain 3 capital letters and 2 numbers!");
         return;
       }
+
+      // Clear error message if inputs are valid
+      setErrorMessage("");
       
       setNewScooter(scooter)
       setScooter(initialScooterState);
@@ -61,10 +64,7 @@ export default function AddScooterForm () {
 
     return (
       <div>
-        <div className="mb-4 max-w-[90%] text-center"> 
-        {/* <ErrorMessage onClose={()=>{
-          setErrorMessage("")}}>{errorMessage}
-      </ErrorMessage> */}
+        <div className="mb-4 max-w-[100%] text-center"> 
         { errorMessage !== "" && (
           <ErrorMessage onClose={()=>{
           setErrorMessage("")}}>{errorMessage}
@@ -102,7 +102,7 @@ export default function AddScooterForm () {
               />
               <Button 
                 onClick={saveNewScooter}
-                text="Check" 
+                text="Add" 
                 color="#f4cf1b"
                 textColor="#292f3f"
               />  

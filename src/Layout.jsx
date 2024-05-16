@@ -7,7 +7,7 @@ export default function Layout () {
   const [newScooter, setNewScooter] = useState(null);
   
   // function notifyScooterAddition(scooter) {
-	// 	setNewScooter(scooter); //when new scooter is added in "AddScooter.jsx", ne value here is set for new scooter. After change of scooters value - addition to localStorage happens in Middle.jsx with useEffect
+	// 	setNewScooter(scooter); //when new scooter is added in "AddScooter.jsx", new value here is set for new scooter. After change of scooters value - addition to localStorage happens in Middle.jsx with useEffect
 	// }
 
   // function resetNewScooter(){
@@ -23,7 +23,6 @@ export default function Layout () {
 //     </div> 
 //   )
 // }
-
 
 return ( 
   <div>

@@ -6,9 +6,7 @@ import Button from './Button';
 import ErrorMessage from "./ErrorMessage";
 import KoltContext from "../context/KoltContext";
 
-
 function Status({ status, onClick }) {
-  
   return (
     <div className="text-2xl inline cursor-pointer" onClick={onClick}>
       {status ? <FaTimesCircle color="#d67eb2" /> : <FaCheckCircle color="#42b1e2" />}
@@ -20,11 +18,12 @@ Status.propTypes = {
   onClick: PropTypes.func,
 };
 
+
 function Scooter({scooter, deleteFunc, updateFunc}){
   return (
       <div 
           key={scooter.id} 
-          className="bg-slate-100 text-slate-700 rounded px-10 py-3 flex flex-wrap gap-x-10 gap-y-8 justify-between overflow-hidden" >
+          className="bg-slate-100 text-slate-700 rounded px-10 py-3 flex flex-wrap gap-x-10 gap-y-8 justify-between overflow-hidden">
             <div className="border-l-2 border-teal-500 px-3 py-2 ">    
               <h3 className="font-bold underline text-teal-600 min-w-[130px]">{scooter.title}</h3>
               <div>Mileage {scooter.ride}km </div>
