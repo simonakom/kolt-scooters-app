@@ -18,7 +18,6 @@ Status.propTypes = {
   onClick: PropTypes.func,
 };
 
-
 function Scooter({scooter, deleteFunc, updateFunc}){
   return (
       <div 
@@ -205,7 +204,7 @@ export default function Middle () {
               <Button  
                 text= {showFreeScooter === true 
                   ? "In use" 
-                  :  "Available" 
+                  : "Available" 
                 }
                 color = { showFreeScooter === true 
                     ? "#d67eb2" 
@@ -228,6 +227,32 @@ export default function Middle () {
                 <option value="2">Increasing</option>
                 <option value="3">Decreasing</option>
               </select>
+            </div>
+        </div>
+        {/* Example:scooter */}
+        <div className="bg-slate-200 text-slate-700 rounded px-10 py-3 flex flex-wrap gap-x-10 gap-y-8 justify-between overflow-hidden cursor-none">
+            <div className="border-l-2 border-teal-500 px-3 py-2 ">    
+              <h3 className="font-bold underline text-teal-600 min-w-[130px]">SKY300</h3>
+              <div>Mileage 10km </div>
+            </div>
+            <div className="border-l-2  border-slate-200 px-3 min-w-[160px]">    
+              <h3 className="font-bold">Registration nr.</h3>
+              <div>HGT23</div>
+            </div>
+            <div className="border-l-2 border-slate-200 px-3 max-w-[120px]">    
+              <h3 className="font-bold">Hourly Rate</h3>
+              <div>3 €</div>
+            </div>
+            <div className="border-l-2  border-slate-200 px-3 min-w-[130px]">    
+              <h3 className="font-bold"> Last used</h3>
+              <div>2024-02-08</div>
+            </div>
+            <div className='flex flex-col px-3 gap-3'>
+              <div className="font-bold">Update</div>
+              <div className="flex gap-3"> 
+                <div className="flex gap-1 min-w-[100px] cursor-none"><Status/>available</div>
+                <FaTrashCan className="text-rose-800 text-2xl"/>
+              </div>
             </div>
         </div>
         {filteredAndSortedScooters.map((s)=>(
