@@ -151,24 +151,37 @@ export default function Middle () {
   function updateStatus(id){
     const newScooters = [...scooter]; //copy of array "scooter"
     const recordIndex = scooter.findIndex((val) => val.id === id); //find record id of scooter
+    const initialStatus = newScooters[recordIndex].isBusy; // Store the initial status
     newScooters[recordIndex].isBusy = !newScooters[recordIndex].isBusy; //update status: boolean value
     // console.log(newScooters)
-
+  
+    setScooter(newScooters); // Set the updated scooter array
+  
+    // If scooter is available, prompt user for distance traveled
+    if (!newScooters[recordIndex].isBusy) {
       let answer;
-    if (!newScooters[recordIndex].isBusy) { // Check if scooter is busy
-        answer = +prompt("How many kilometres did the scooter travel?");
-        console.log(answer);
-        if (answer === 0) return;
-        else if (!isNaN(answer)) { // Validation if user inserted number in prompt
-            newScooters[recordIndex].ride += answer; // Update ride
-            setScooter(newScooters);
-        } else {
-            setErrorMessage("Please, enter a number!");
-            return;
+      do {
+        answer = prompt("How many kilometres did the scooter travel?");
+        if (answer === null) {
+          // Reset status if the user cancels
+          newScooters[recordIndex].isBusy = initialStatus;
+          setScooter(newScooters); // Update the scooter array with the initial status
+          return;
         }
-    } else {
-        setScooter(newScooters); // Establish new value for scooter
-    }}
+        answer = answer.trim(); // Trim the input
+      } while (!/^\d+$/.test(answer) || parseInt(answer) < 0); // Loop until a valid positive integer input is provided or the user cancels
+      
+      const distance = parseInt(answer); // Parse the input to an integer
+  
+      // Update ride
+      newScooters[recordIndex].ride += distance;
+  
+      // Update last use time to current date
+      newScooters[recordIndex].lastUseTime = Date.now();
+      
+      setScooter(newScooters); // Update the scooter array with the new ride value and last use time
+    }
+  }
 
   return (
     <div className="container mx-auto min-h-[400px] flex flex-col p-4 pt-6 gap-2 mb-10">   
