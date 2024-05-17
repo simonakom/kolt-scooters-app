@@ -85,23 +85,23 @@ export default function Middle () {
     if (newScooter){
       // console.log("New scooter from imputs was added:" + newScooter); console.log(newScooter);
 
-      const newId = +localStorage.getItem("currentId");
-      if(!newId){
-        localStorage.setItem("currentId", "1")
-      }
+    const newId = +localStorage.getItem("currentId");
+    if(!newId){
+      localStorage.setItem("currentId", "1")
+    }
  
-          const newScooterAddition = { //add missing values when adding new scooter
-            ...newScooter,
-            id: newId || 1,
-            lastUseTime: 1,
-            isBusy: false
-        };
-        // console.log("Missing values added:" + newScooter); console.log(newScooterAddition);
+    const newScooterAddition = { //add missing values when adding new scooter
+      ...newScooter,
+      id: newId || 1,
+      lastUseTime: 1,
+      isBusy: false
+    };
+    // console.log("Missing values added:" + newScooter); console.log(newScooterAddition);
       
-      setScooter([...scooter, newScooterAddition]); //Value of  all scooters: existent + new
-      const nextId = newId + 1 === 1 ? 2 :newId + 1;
-      localStorage.setItem("currentId", nextId);
-      setNewScooter(null);
+    setScooter([...scooter, newScooterAddition]); //Value of  all scooters: existent + new
+    const nextId = newId + 1 === 1 ? 2 :newId + 1;
+    localStorage.setItem("currentId", nextId);
+    setNewScooter(null);
     }
   }
 
@@ -174,7 +174,6 @@ export default function Middle () {
   
       // Update ride
       newScooters[recordIndex].ride += distance;
-  
       // Update last use time to current date
       newScooters[recordIndex].lastUseTime = Date.now();
       
