@@ -48,7 +48,7 @@ Hope you find this project interesting and useful!
   <img src="./public/look2.png" alt="page" style="border-radius: 10px; display: inline-block;" />
 
 ### Mobile version:
-  <img src="./public/responsive.png" alt="page" style="border-radius: 10px; display: inline-block;" />
+  <img src="./public/responsive.png" alt="page" width="300" style="border-radius: 5px;" />
 </div>
 
 
